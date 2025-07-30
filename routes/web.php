@@ -2,6 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LecturerController;
+use App\Http\Controllers\EnrollmentController;
+use App\Http\Controllers\CourseLecturerController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -12,6 +19,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth');
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+
 // Rute untuk dashboard
 Route::middleware('auth')->prefix('dashboard')->group(function () {
     // Rute untuk mahasiswa
@@ -59,4 +67,3 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     Route::put('/course-lecturers/{courseLecturer}', [CourseLecturerController::class, 'update'])->name('course-lecturers.update');
     Route::delete('/course-lecturers/{courseLecturer}', [CourseLecturerController::class, 'destroy'])->name('course-lecturers.destroy');
 });
-

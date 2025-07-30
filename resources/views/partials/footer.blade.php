@@ -1,6 +1,14 @@
-<footer class="bg-gray-800 text-white p-4 fixed bottom-0 w-screen">
-    <div class="container mx-auto">
-        <p class="text-center">© {{now()->year}} Sistem Akademik Kampus Muhammadiyah. All rights reserved.</p>
-        <p class="text-center mt-2">Hubungi kami: <a href="mailto:unmuhpnk.ic.id" class="text-blue-400">unmuhpnk.ic.id</a></p>
+<footer class="bg-gray-900 text-white py-6 shadow-lg">
+    <div class="container mx-auto flex flex-col items-center">
+        <p class="text-center text-sm md:text-base font-semibold">
+            &copy; {{ now()->year }} Sistem Akademik Kampus Muhammadiyah.<br class="md:hidden">
+            All rights reserved.
+        </p>
+        <p class="text-center mt-3 text-xs md:text-sm">
+            Hubungi kami:
+            <a href="mailto:info@unmuhpnk.ac.id" class="text-blue-400 hover:underline">
+                info@unmuhpnk.ac.id
+            </a>
+        </p>
     </div>
 </footer>
